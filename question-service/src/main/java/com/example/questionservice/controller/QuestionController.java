@@ -3,6 +3,7 @@ package com.example.questionservice.controller;
 
 import com.example.questionservice.model.Question;
 import com.example.questionservice.model.QuestionWrapper;
+import com.example.questionservice.model.Response;
 import com.example.questionservice.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -49,7 +50,11 @@ public class QuestionController {
     }
 
 
-//    getScore
+//    getScore - this is a postMapping
+    @PostMapping("qetScore")
+    public ResponseEntity<Integer> getScore (@RequestBody List<Response> responses){
+        return questionService.getScore(responses);
+    }
 
 
 }
