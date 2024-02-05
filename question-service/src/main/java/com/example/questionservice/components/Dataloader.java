@@ -75,5 +75,12 @@ public class Dataloader implements ApplicationRunner {
         questionDao.save(question3);
         questionDao.save(question4);
         questionDao.save(question5);
+        questionDao.save(question6);
+        questionDao.save(question7);
+        questionDao.save(question8);
+        questionDao.save(question9);
+        questionDao.save(question10);
+        questionDao.save(question11);
+        questionDao.save(question12);
     }
 }
