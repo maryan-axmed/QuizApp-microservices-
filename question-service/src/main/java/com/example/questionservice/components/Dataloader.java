@@ -36,6 +36,9 @@ public class Dataloader implements ApplicationRunner {
 
 
 //        add the questions to the question database
+
+        questionDao.deleteAll(); //this is a short fix => need to find out how to wipe my db before re-populating.
+//        this fix does delete the questions, but the id of the questions increase, meaning the db is still populated.
         questionDao.save(question1);
         questionDao.save(question2);
         questionDao.save(question3);
