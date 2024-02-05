@@ -2,6 +2,7 @@ package com.example.quizservice.model;
 
 import lombok.Data;
 
+//this "wrapper" is essentially a DTO (data transfer object)
 @Data
 public class QuestionWrapper {
 

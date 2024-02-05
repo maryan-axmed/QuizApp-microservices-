@@ -1,8 +1,9 @@
 package com.example.quizservice.controller;
 
-import com.telusko.quizapp.model.QuestionWrapper;
-import com.telusko.quizapp.model.Response;
-import com.telusko.quizapp.service.QuizService;
+
+import com.example.quizservice.model.QuestionWrapper;
+import com.example.quizservice.model.Response;
+import com.example.quizservice.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
