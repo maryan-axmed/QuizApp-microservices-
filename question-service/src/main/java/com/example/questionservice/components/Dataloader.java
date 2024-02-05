@@ -34,6 +34,15 @@ public class Dataloader implements ApplicationRunner {
 //        question 4
         Question question4 = new Question("What is the largest animal in the world?", "Lion", "Elephant", "Frog", "Whale", "Whale", "Easy", "Animals");
 
+//        questions 5
+//        questions 6
+//        questions 7
+//        questions 8
+//        questions 9
+//        questions 10
+//        questions 11
+//        questions 12
+
 
 //        add the questions to the question database
 
