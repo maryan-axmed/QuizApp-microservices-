@@ -25,23 +25,45 @@ public class Dataloader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
 //        make some questions
+//        geo - 4
+//        animals - 4
+//        music - 4
+
 //        question 1
         Question question1 = new Question("What is the capital of France?", "London", "Paris", "Madrid", "Oslo", "Paris", "Easy", "Geography");
+
 //        question 2
         Question question2 = new Question("What is the largest country in the world?", "United Kingdom", "Russia", "China", "Botswana", "Russia", "Easy", "Geography");
+
 //        question 3
         Question question3 = new Question("How many legs does a spider have?", "8", "2", "6", "10", "8", "Easy", "Animals");
+
 //        question 4
         Question question4 = new Question("What is the largest animal in the world?", "Lion", "Elephant", "Frog", "Whale", "Whale", "Easy", "Animals");
 
 //        questions 5
+        Question question5 = new Question("What is the smallest country in the world?", "Vatican City", "Luxembourg", "Monaco", "Bahrain", "Vatican City", "Medium", "Geography");
+
 //        questions 6
+        Question question6 = new Question("Who make the hit song 'Smooth Criminal'?", "Taylor Swift", "Beyonce", "Prince", "Micheal Jackson", "Micheal Jackson", "Easy", "Music");
+
 //        questions 7
+        Question question7 = new Question("Which of the following countries is a landlocked country?", "Kenya", "Austria", "Belgium", "Gambia", "Austria", "Medium", "Geography");
+
 //        questions 8
+        Question question8 = new Question("Which animal is known for having the most powerful bite?", "Hippopotamus", "Lion", "Crocodile", "Dog", "Hippopotamus", "Difficult", "Animals");
+
 //        questions 9
+        Question question9 = new Question("A dog sweats through which part of its body?", "Tongue", "Paw", "Back", "Ears", "Paw", "Difficult", "Animals");
+
 //        questions 10
+        Question question10 = new Question("Which official World Cup song did Shakira release in 2010?", "Hips dont lie", "She wolf", "Waka Waka", "Whenever, Whereever", "Waka Waka", "Easy", "Music");
+
 //        questions 11
+        Question question11 = new Question("Beyoncé’s 2016 album shares its name with which sweet drink?", "Lemonade", "Coco-Cola", "Tropical Juice", "7Up", "Lemondade", "Easy", "Music");
+
 //        questions 12
+        Question question12 = new Question("Which band released the big hit 'We will rock you?", "Rolling Stones", "Queen", "Beatles", "Take That", "Queen", "Medium", "Music");
 
 
 //        add the questions to the question database
@@ -52,5 +74,6 @@ public class Dataloader implements ApplicationRunner {
         questionDao.save(question2);
         questionDao.save(question3);
         questionDao.save(question4);
+        questionDao.save(question5);
     }
 }
