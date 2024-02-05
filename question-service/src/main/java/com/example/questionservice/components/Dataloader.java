@@ -57,10 +57,10 @@ public class Dataloader implements ApplicationRunner {
         Question question9 = new Question("A dog sweats through which part of its body?", "Tongue", "Paw", "Back", "Ears", "Paw", "Difficult", "Animals");
 
 //        questions 10
-        Question question10 = new Question("Which official World Cup song did Shakira release in 2010?", "Hips dont lie", "She wolf", "Waka Waka", "Whenever, Whereever", "Waka Waka", "Easy", "Music");
+        Question question10 = new Question("Which official World Cup song did Shakira release in 2010?", "Hips dont lie", "She wolf", "Waka Waka", "Whenever, Wherever", "Waka Waka", "Easy", "Music");
 
 //        questions 11
-        Question question11 = new Question("Beyoncé’s 2016 album shares its name with which sweet drink?", "Lemonade", "Coco-Cola", "Tropical Juice", "7Up", "Lemondade", "Easy", "Music");
+        Question question11 = new Question("Beyoncé’s 2016 album shares its name with which sweet drink?", "Lemonade", "Coco-Cola", "Tropical Juice", "7Up", "Lemonade", "Easy", "Music");
 
 //        questions 12
         Question question12 = new Question("Which band released the big hit 'We will rock you?", "Rolling Stones", "Queen", "Beatles", "Take That", "Queen", "Medium", "Music");
