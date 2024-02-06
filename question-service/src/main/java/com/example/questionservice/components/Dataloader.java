@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Dataloader implements ApplicationRunner {
-
 //    auto-wire my repos that I am using
 //    this microservice needs question-db repo
     @Autowired
