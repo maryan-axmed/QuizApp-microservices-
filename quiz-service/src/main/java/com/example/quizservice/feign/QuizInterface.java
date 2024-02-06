@@ -16,16 +16,16 @@ import java.util.List;
 public interface QuizInterface {
 //    DECLARE (not define) which methods, of the service we are accessing, that we want
 
-    @GetMapping("generate")
+    @GetMapping("question/generate")
     public ResponseEntity<List<Integer>> getQuestionForQuiz(@RequestParam String categoryName, @RequestParam Integer numberOfQuestions);
 
 
     //    getQuestionById - this will be a PostMapping
-    @PostMapping("getQuestions")
+    @PostMapping("question/getQuestions")
     public ResponseEntity<List<QuestionWrapper>> getQuestionById(@RequestBody List<Integer> questionIds);
 
 
     //    getScore - this is a postMapping
-    @PostMapping("qetScore")
+    @PostMapping("question/qetScore")
     public ResponseEntity<Integer> getScore (@RequestBody List<Response> responses);
 }
