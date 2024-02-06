@@ -2,6 +2,7 @@ package com.example.quizservice.controller;
 
 
 import com.example.quizservice.model.QuestionWrapper;
+import com.example.quizservice.model.QuizDTO;
 import com.example.quizservice.model.Response;
 import com.example.quizservice.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class QuizController {
     QuizService quizService;
 
     @PostMapping("create")
-    public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam int numQ, @RequestParam String title){
-        return quizService.createQuiz(category, numQ, title);
+    public ResponseEntity<String> createQuiz(@RequestBody QuizDTO quizDTO){
+        return quizService.createQuiz(quizDTO.getCategoryName(), quizDTO.getNumberOfQuestions(), quizDTO.getTitle());
     }
     @GetMapping("get/{id}")
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id){
