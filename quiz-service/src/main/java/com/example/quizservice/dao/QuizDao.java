@@ -1,6 +1,6 @@
 package com.example.quizservice.dao;
 
-import com.telusko.quizapp.model.Quiz;
+import com.example.quizservice.model.Quiz;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface QuizDao extends JpaRepository<Quiz,Integer> {

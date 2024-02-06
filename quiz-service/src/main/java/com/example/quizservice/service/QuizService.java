@@ -2,6 +2,10 @@ package com.example.quizservice.service;
 
 
 import com.example.quizservice.dao.QuizDao;
+import com.example.quizservice.model.Question;
+import com.example.quizservice.model.QuestionWrapper;
+import com.example.quizservice.model.Quiz;
+import com.example.quizservice.model.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,18 +20,19 @@ public class QuizService {
 
     @Autowired
     QuizDao quizDao;
-    @Autowired
-    QuestionDao questionDao;
+//    @Autowired
+//    QuestionDao questionDao;
 
 
     public ResponseEntity<String> createQuiz(String category, int numQ, String title) {
 
-        List<Question> questions = questionDao.findRandomQuestionsByCategory(category, numQ);
 
-        Quiz quiz = new Quiz();
-        quiz.setTitle(title);
-        quiz.setQuestions(questions);
-        quizDao.save(quiz);
+//        List<Question> questions = questionDao.findRandomQuestionsByCategory(category, numQ);
+//
+//        Quiz quiz = new Quiz();
+//        quiz.setTitle(title);
+//        quiz.setQuestions(questions);
+//        quizDao.save(quiz);
 
         return new ResponseEntity<>("Success", HttpStatus.CREATED);
 
