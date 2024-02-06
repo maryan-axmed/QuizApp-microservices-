@@ -2,6 +2,7 @@ package com.example.quizservice.service;
 
 
 import com.example.quizservice.dao.QuizDao;
+import com.example.quizservice.feign.QuizInterface;
 import com.example.quizservice.model.QuestionWrapper;
 import com.example.quizservice.model.Quiz;
 import com.example.quizservice.model.Response;
@@ -20,22 +21,25 @@ public class QuizService {
 
     @Autowired
     QuizDao quizDao;
-//    @Autowired
-//    QuestionDao questionDao;
+
+    @Autowired
+    QuizInterface quizInterface;
 
 
     public ResponseEntity<String> createQuiz(String category, int numQ, String title) {
 // to create a quiz, this quiz service will need to interact with the question service, to get the questions (i.e. the list of integers)
 
 // we need to call the method, from questionService => getQuestionForQuiz and call the "generate" url,
-// using Rest Template => this will send request to the other server
+// using RestTemplate => this will send request to the other server
 // "generate" url: http://localhost:8080/question/generate
-//        RestTemplate
-//        List<Integer> questions = questionDao.findRandomQuestionsByCategory(category, numQ);
-//        Quiz quiz = new Quiz();
-//        quiz.setTitle(title);
-//        quiz.setQuestions(questions);
-//        quizDao.save(quiz);
+//  using Eureka Server + OpenFeign to allow the microservices to interact
+
+        List<Integer> questions = quizInterface.getQuestionForQuiz(category, numQ).getBody();
+        Quiz quiz = new Quiz();
+        quiz.setTitle(title);
+        quiz.setQuestionIds(questions);
+
+        quizDao.save(quiz);
 
         return new ResponseEntity<>("Success", HttpStatus.CREATED);
 
