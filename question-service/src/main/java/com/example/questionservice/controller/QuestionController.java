@@ -50,6 +50,7 @@ public class QuestionController {
 //    getQuestionById - this will be a PostMapping
     @PostMapping("getQuestions")
     public ResponseEntity<List<QuestionWrapper>> getQuestionById(@RequestBody List<Integer> questionIds){
+//        the following line allows me to see which configuration is being used.
         System.out.println(environment.getProperty("local.server.port"));
         return questionService.getQuestionById(questionIds);
     }
