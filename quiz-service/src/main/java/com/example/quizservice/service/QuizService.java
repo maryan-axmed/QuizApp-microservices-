@@ -46,18 +46,16 @@ public class QuizService {
     }
 
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(Integer id) {
-//        Optional<Quiz> quiz = quizDao.findById(id);
-//        List<Question> questionsFromDB = quiz.get().getQuestions();
-        List<QuestionWrapper> questionsForUser = new ArrayList<>();
-//        for(Question q : questionsFromDB){
-//            QuestionWrapper qw = new QuestionWrapper(q.getId(), q.getQuestionTitle(), q.getOption1(), q.getOption2(), q.getOption3(), q.getOption4());
-//            questionsForUser.add(qw);
-//        }
+        Quiz quiz = quizDao.findById(id).get();
+        List<Integer> questionIds = quiz.getQuestionIds();
 
-        return new ResponseEntity<>(questionsForUser, HttpStatus.OK);
+        ResponseEntity<List<QuestionWrapper>> questions = quizInterface.getQuestionById(questionIds);
+
+        return questions;
 
     }
 
+//    this is the same as getScore
     public ResponseEntity<Integer> calculateResult(Integer id, List<Response> responses) {
 //        Quiz quiz = quizDao.findById(id).get();
 //        List<Question> questions = quiz.getQuestions();
