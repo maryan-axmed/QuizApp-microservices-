@@ -5,6 +5,8 @@ import com.example.questionservice.model.Question;
 import com.example.questionservice.model.QuestionWrapper;
 import com.example.questionservice.model.Response;
 import com.example.questionservice.service.QuestionService;
+//import org.hibernate.cfg.Environment;
+import org.springframework.core.env.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +25,8 @@ public class QuestionController {
         return questionService.getAllQuestions();
     }
 
+    @Autowired
+    Environment environment;
 
     @GetMapping("category/{category}")
     public ResponseEntity<List<Question>> getQuestionsByCategory(@PathVariable String category){
@@ -46,6 +50,7 @@ public class QuestionController {
 //    getQuestionById - this will be a PostMapping
     @PostMapping("getQuestions")
     public ResponseEntity<List<QuestionWrapper>> getQuestionById(@RequestBody List<Integer> questionIds){
+        System.out.println(environment.getProperty("local.server.port"));
         return questionService.getQuestionById(questionIds);
     }
 
