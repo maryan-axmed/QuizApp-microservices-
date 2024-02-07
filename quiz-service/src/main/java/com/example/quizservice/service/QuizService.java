@@ -56,17 +56,10 @@ public class QuizService {
     }
 
 //    this is the same as getScore
+//    this method is calling on the getScore method in the question service
+//    so the quiz service does not have to do any work
     public ResponseEntity<Integer> calculateResult(Integer id, List<Response> responses) {
-//        Quiz quiz = quizDao.findById(id).get();
-//        List<Question> questions = quiz.getQuestions();
-        int right = 0;
-//        int i = 0;
-//        for(Response response : responses){
-//            if(response.getResponse().equals(questions.get(i).getRightAnswer()))
-//                right++;
-//
-//            i++;
-//        }
-        return new ResponseEntity<>(right, HttpStatus.OK);
+        ResponseEntity<Integer> score = quizInterface.getScore(responses);
+        return score;
     }
 }
